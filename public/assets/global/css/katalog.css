@@ -1,0 +1,68 @@
+div.katalog {
+    background-color: #FFF;
+    width: 12.5cm !important;
+    min-height: 7.5cm !important;
+}
+
+.katalog p.tajukEntri {
+    margin-left: 40px;
+    text-indent: -12px;
+    margin-bottom: 0px;
+}
+
+.katalog p.judulSeragam {
+    margin-left: 52px;
+    margin-bottom: 0px;
+}
+
+.katalog p.isi {
+    text-indent: 12px;
+    margin-left: 40px;
+}
+
+.katalog p.sumber {
+    margin-left: 52px;
+    margin-bottom: 0px;
+}
+
+.katalog p.status {
+    margin-left: 52px;
+}
+
+.katalog p.subyek {
+    margin-left: 52px;
+    margin-bottom: 18px;
+}
+
+.katalog div.singkatan {
+    margin-left: 52px;
+    float: left;
+}
+
+.katalog div.lokasi {
+    float: right;
+    margin-right: 12px;
+}
+
+div.abstrak {
+    background-color: #FFF;
+    width: 100% !important;
+}
+
+.abstrak .abstrakLabel {
+    width: 100px;
+    float: left;
+}
+
+.abstrak .abstrakStrip {
+    width: 30px;
+    float: left;
+}
+
+.abstrak div.abstrakIsi {
+    margin-left: 130px;
+}
+
+.abstrak p.abstrakIsi {
+    margin-left: 30px;
+}

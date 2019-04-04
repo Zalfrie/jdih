@@ -1,0 +1,33 @@
+<?php
+
+	$cfg 	= array("ldap_host"=>"aplikasi.bumn.go.id",
+				"ldap_baseDN" => "cn=people,dc=bumn,dc=go,dc=id",
+				"ldap_manager_user" => "cn=root,dc=bumn,dc=go,dc=id",
+				"ldap_manager_pwd" => "admin"
+				);
+
+$ldapconn 	= ldap_connect($cfg['ldap_host']) or die("Could not connect to " . $cfg['ldap_host']);
+$root 		= $cfg['ldap_manager_user'];
+$rootPwd 	= $cfg['ldap_manager_pwd'];
+
+ldap_bind($ldapconn, $root, $rootPwd);
+
+		$ldapFilterAttributes = array();
+			$ldapSortAttributes = array('ou', 'cn');
+
+			$ouFilter = array('ou');
+
+			$op = ldap_search($ldapconn, $cfg['ldap_baseDN'], "cn=susilo.jono", $ouFilter);
+			$ouUserId = ldap_get_entries($ldapconn, $op);
+$pid = 'jdih';
+$level = 'us';
+$keyword = 'jono';
+				$search ="(&(cn=*$keyword*)(ou=". strtolower($ouUserId[0][ou][0]) . ")(employeetype=$level)(businessCategory=$pid))";
+$sr=ldap_search($ldapconn, $cfg['ldap_baseDN'], $search, $ldapFilterAttributes  );
+		foreach ($ldapSortAttributes as $eachSortAttribute) {
+			ldap_sort($ldapconn, $sr, $eachSortAttribute);
+		}
+		$info = ldap_get_entries($ldapconn, $sr);	
+var_dump($info);die();
+
+?>

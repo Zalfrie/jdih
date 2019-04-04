@@ -1,0 +1,1 @@
+alter table per_0_tm add column catatan_prepare text;

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /adm/
+Disallow: /administrasi/
+Disallow: /dashboard/
